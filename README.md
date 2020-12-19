@@ -163,7 +163,7 @@ The main purpose of this network is to expose a load-balanced and monitored inst
 
 Load balancing ensures that the application will be highly available, in addition to restricting access to the network.
 - What aspect of security do load balancers protect? Availability
-- What is the advantage of a jump box? A jump box acts as a gateway to the other virtual machines on your created network. This is advantageous because it funnels all traffic through the jump box and allows only secure connections from   allowed ip addresses using a ssh key.  This is also reduces the attack surface by only exposing one machine to the public internet. 
+- What is the advantage of a jump box? A jump box acts as a gateway to the other virtual machines on your created network. This is advantageous because it funnels all traffic through the jump box and allows only secure connections from   allowed ip addresses using a ssh key.  This also reduces the attack surface by only exposing one machine to the public internet. 
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the logs and system traffic.
 - What does Filebeat watch for? Filebeat watches log files/locations and collects log events. 
