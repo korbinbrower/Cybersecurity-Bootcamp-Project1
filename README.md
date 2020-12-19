@@ -267,4 +267,3 @@ Answer the following questions to fill in the blanks:
 - How do I specify which machine to install the ELK server on versus which to install Filebeat on? you specify the group [webservers] or [elk] at the end of the ansible-playbook command 
 - Which URL do you navigate to in order to check that the ELK server is running? http://[Elk Box Public IP]/app/kibana (http://168.61.36.247:5601/app/kibana)
 
-As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc.
