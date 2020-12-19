@@ -240,18 +240,24 @@ In order to use the playbook, you will need to have an Ansible control node alre
 SSH into the control node and follow the steps below:
 - Copy the playbook.yml file to /etc/ansible/roles.
 - Update the host file to include:
-	[webservers]
+
+```	[webservers]
 	10.0.0.5 ansible_python_interpreter=/usr/bin/python3
    	10.0.0.6 ansible_python_interpreter=/usr/bin/python3
   	10.0.0.8 ansible_python_interpreter=/usr/bin/python3
 
 	[elk]
 	10.1.0.4 ansible_python_interpreter=/usr/bin/python3
+```
+
 - Run the playbook: 
+```
 	cd /etc/ansible/roles
 	ansible-playbook install-elk.yml elk 
 	ansible-playbook filebeat-playbook.yml webservers
 	ansible-playbook metricbeat-playbook.yml webservers 
+```
+
 - Navigate to http://[Elk Box Public IP]/app/kibana (http://168.61.36.247:5601/app/kibana) to check that the installation worked as expected.
 
 Answer the following questions to fill in the blanks:
