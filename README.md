@@ -240,8 +240,8 @@ In order to use the playbook, you will need to have an Ansible control node alre
 SSH into the control node and follow the steps below:
 - Copy the playbook.yml file to /etc/ansible/roles.
 - Update the host file to include:
-
-```	[webservers]
+```
+	[webservers]
 	10.0.0.5 ansible_python_interpreter=/usr/bin/python3
    	10.0.0.6 ansible_python_interpreter=/usr/bin/python3
   	10.0.0.8 ansible_python_interpreter=/usr/bin/python3
