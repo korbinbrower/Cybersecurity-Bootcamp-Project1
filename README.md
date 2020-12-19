@@ -4,7 +4,7 @@
 
 The files in this repository were used to configure the network depicted below.
 
-Diagrams/complete-cloud-network-diagram.png
+https://github.com/korbinbrower/Cybersecurity-Bootcamp-Project1/blob/main/Diagrams/complete-cloud-network-diagram.png
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the yml file may be used to install only certain pieces of it, such as Filebeat.
 
@@ -214,7 +214,7 @@ The playbook implements the following tasks:
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-Images/successful_configuration_of_the_ELK_box.png
+https://github.com/korbinbrower/Cybersecurity-Bootcamp-Project1/blob/main/Images/successful_configuration_of_the_ELK_box.PNG
 
 ### Target Machines & Beats
 
