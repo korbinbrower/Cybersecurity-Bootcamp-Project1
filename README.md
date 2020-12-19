@@ -42,7 +42,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
     systemd:
       name: docker
       enabled: yes
-
+```      
 	elk-playbook.yml 
 ```yaml	
 ---
@@ -89,7 +89,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
           -  5601:5601
           -  9200:9200
           -  5044:5044
-	  
+```	  
 	filebeat-playbook.yml 
 ```yaml	
 ---
@@ -117,7 +117,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
 
   - name: start filebeat service
     command: service filebeat start
-
+```    
 	metricbeat-playbook.yml 
 ```yaml	
 ---
@@ -145,6 +145,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
 
   - name: start metricbeat service
     command: service metricbeat start
+```    
 
 This document contains the following details:
 - Description of the Topology
