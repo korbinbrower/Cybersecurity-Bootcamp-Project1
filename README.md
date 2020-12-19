@@ -202,7 +202,7 @@ A summary of the access policies in place can be found in the table below.
 
 ### Elk Configuration
 
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because ansible lets you put multiple commands into several servers from a single playbook. 
+Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because ansible lets you put multiple commands into several machines from a single playbook thus cutting down on deployment time and error over any size network. 
 
 The playbook implements the following tasks:
 - install docker.io
