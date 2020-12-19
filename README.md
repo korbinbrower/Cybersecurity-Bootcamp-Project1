@@ -9,6 +9,7 @@ Images/complete-cloud-network-diagram.png
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the yml file may be used to install only certain pieces of it, such as Filebeat.
 
 	dvwa-playbook.yml 
+```	
 ---
 - name: first playbook
   hosts: webservers
@@ -44,6 +45,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
 
 	
 	elk-playbook.yml 
+```	
 ---
 - name: Configure Elk VM with Docker
   hosts: elk
@@ -91,6 +93,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
 
 
 	filebeat-playbook.yml 
+```	
 ---
 - name: installing and launching filebeat
   hosts: webservers
@@ -119,6 +122,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
 
 
 	metricbeat-playbook.yml 
+```	
 ---
 - name: installing and launching metricbeat
   hosts: webservers
