@@ -11,26 +11,28 @@ These files have been tested and used to generate a live ELK deployment on Azure
 	dvwa-playbook.yml 
 ```yaml	
 ---
-- name: first playbook
+- name: Installing DVWA
   hosts: webservers
   become: true
   tasks:
-
-  - name: install docker
+  
+  - name: Install docker
     apt:
       update_cache: yes
       name: docker.io
       state: present
 
-  - name: install pip3
+  - name: Install pip3
     apt:
       name: python3-pip
       state: present
-  - name: install docker pip
+
+  - name: Install docker pip
     pip:
       name: docker
       state: present
-  - name : install dvwa container
+
+  - name : Install dvwa container
     docker_container:
       name: dvwa
       image: cyberxsecurity/dvwa
@@ -38,7 +40,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
       restart_policy: always
       published_ports: 80:80
 
-  - name: enable docker service
+  - name: Enable docker service
     systemd:
       name: docker
       enabled: yes
@@ -50,7 +52,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
   hosts: elk
   become: true
   tasks:
- 
+
     - name: Install docker.io
       apt:
         update_cache: yes
@@ -64,7 +66,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
         name: python3-pip
         state: present
 
-    - name: Install Docker module
+    - name: Install docker module
       pip:
         name: docker
         state: present
@@ -75,11 +77,11 @@ These files have been tested and used to generate a live ELK deployment on Azure
     - name: Use more memory
       sysctl:
         name: vm.max_map_count
-        value: 262144
+        value: '262144'
         state: present
         reload: yes
 
-    - name: download and launch a docker elk container
+    - name: Download and launch a docker elk container
       docker_container:
         name: elk
         image: sebp/elk:761
@@ -93,57 +95,57 @@ These files have been tested and used to generate a live ELK deployment on Azure
 	filebeat-playbook.yml 
 ```yaml	
 ---
-- name: installing and launching filebeat
+- name: Installing and Launching Filebeat
   hosts: webservers
   become: yes
   tasks:
 
-  - name: download filebeat deb
+  - name: Download filebeat .deb file
     command: curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.4.0-amd64.deb
 
-  - name: install filebeat deb
+  - name: Install filebeat .deb
     command: dpkg -i filebeat-7.4.0-amd64.deb
 
-  - name: drop in filebeat.yml
+  - name: Drop in filebeat.yml
     copy:
       src: /etc/ansible/roles/files/filebeat-config.yml
       dest: /etc/filebeat/filebeat.yml
 
-  - name: enable and configure system module
+  - name: Enable and configure system module
     command: filebeat modules enable system
 
-  - name: setup filebeat
+  - name: Setup filebeat
     command: filebeat setup
 
-  - name: start filebeat service
+  - name: Start filebeat service
     command: service filebeat start
 ```    
 	metricbeat-playbook.yml 
 ```yaml	
 ---
-- name: installing and launching metricbeat
+- name: Installing and Launching Metricbeat
   hosts: webservers
   become: yes
   tasks:
 
-  - name: download metricbeat deb
+  - name: Download metricbeat .deb file
     command: curl -L -O https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-7.4.0-amd64.deb
 
-  - name: install metricbeat deb
+  - name: Install metricbeat .deb
     command: dpkg -i metricbeat-7.4.0-amd64.deb
 
-  - name: drop in metricbeat.yml
+  - name: Drop in metricbeat.yml
     copy:
       src: /etc/ansible/roles/files/metricbeat-config.yml
       dest: /etc/metricbeat/metricbeat.yml
 
-  - name: enable and configure system module
+  - name: Enable and configure system module
     command: metricbeat modules enable docker
 
-  - name: setup metricbeat
+  - name: Setup metricbeat
     command: metricbeat setup
 
-  - name: start metricbeat service
+  - name: Start metricbeat service
     command: service metricbeat start
 ```    
 
