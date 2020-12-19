@@ -43,7 +43,6 @@ These files have been tested and used to generate a live ELK deployment on Azure
       name: docker
       enabled: yes
 
-	
 	elk-playbook.yml 
 ```	
 ---
@@ -90,8 +89,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
           -  5601:5601
           -  9200:9200
           -  5044:5044
-
-
+	  
 	filebeat-playbook.yml 
 ```	
 ---
@@ -119,7 +117,6 @@ These files have been tested and used to generate a live ELK deployment on Azure
 
   - name: start filebeat service
     command: service filebeat start
-
 
 	metricbeat-playbook.yml 
 ```	
